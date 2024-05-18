@@ -34,7 +34,7 @@ import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/ge
     },
   ];
   
-  async function run() {
+  async function run(message) {
     console.log("Gemini api key", apiKey)
     const chatSession = model.startChat({
       generationConfig,
@@ -56,7 +56,7 @@ import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/ge
     });
   
     const result = await chatSession.sendMessage("INSERT_INPUT_HERE");
-    console.log(result.response.text());
+    return result.response.text();
   }
   
-  run();
+ export default run;
