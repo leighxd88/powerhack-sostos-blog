@@ -6,6 +6,7 @@ const FormPost = ()=>{
     const [formData, setFormData] = useState({
         title: "",
         content: "",
+        tag: "not sure"
       });
       const [error, setError]= useState(false)
       const [loading, setLoading] = useState(false)
@@ -22,9 +23,13 @@ const FormPost = ()=>{
         setLoading(true)
         console.log(loading)
         const result = await run(`title: ${formData.title}, content: ${formData.content}`);
-        console.log(result);
-    
-        try{
+        console.log(result.toLowerCase());
+        
+            setFormData({
+                ...formData,
+                tag: result.trim()
+            });
+try{
             const { data, error } = await supabase.from('posts')
             .insert(formData).single()
             if(error){
