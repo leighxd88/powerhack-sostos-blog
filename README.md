@@ -8,7 +8,7 @@ Using Gemini api, Sostos-blog fact-checks posts and returns either
 -Not sure ( if in doubt of the post details)
 -false ( if sure the post details are incorrect)
 
-##what benefits does sostos-blog bring?
+## what benefits does sostos-blog bring?
 Sostos-blog seems to offer a unique approach to social media blogging by integrating a fact-checking system into its platform. This feature could bring several benefits:
 
 1. **Improved Credibility**: By fact-checking posts before they are published, Sostos-blog can help ensure that the information shared on its platform is accurate and reliable. This can enhance the credibility of the platform and build trust among users.
