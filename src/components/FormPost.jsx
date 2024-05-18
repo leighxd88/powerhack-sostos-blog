@@ -21,10 +21,9 @@ const FormPost = ()=>{
         e.preventDefault()
         setLoading(true)
         console.log(loading)
-        const geminiAi = async()=> {
-            run(`title: ${formData.title}, content: ${formData.content}`)
-        }
-        
+        const result = await run(`title: ${formData.title}, content: ${formData.content}`);
+        console.log(result);
+    
         try{
             const { data, error } = await supabase.from('posts')
             .insert(formData).single()
@@ -38,9 +37,7 @@ const FormPost = ()=>{
         }finally{
             setLoading(false)
         }
-      }
-
-      
+    }
     
  return (
     <div className="w-full p-4 md:p-12 border-grey-500 border-2 rounded-md md:rounded-xl">

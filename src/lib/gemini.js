@@ -1,7 +1,7 @@
 
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
   
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = 'AIzaSyAqP1fo5O74W5F1wSFydYNUhOpcUjWWAR0';
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash-latest",
@@ -35,7 +35,7 @@ import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/ge
   ];
   
   async function run(message) {
-    console.log("Gemini api key", apiKey)
+    console.log("Gemini api key", apiKey, message)
     const chatSession = model.startChat({
       generationConfig,
       safetySettings,
@@ -55,7 +55,7 @@ import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/ge
       ],
     });
   
-    const result = await chatSession.sendMessage("INSERT_INPUT_HERE");
+    const result = await chatSession.sendMessage(message);
     return result.response.text();
   }
   
