@@ -1,7 +1,10 @@
+import Header from "../components/Header"
 
 const Post = ()=>{
     return(
-        <div>Post</div>
+        <div>
+            <Header/>
+        </div>
     )
 }
 
